@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jammer_1.Views.MatchSettings"
+             xmlns:forms="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="INSTRUMENTS I AM LOOKING FOR" FontSize="Small" FontAttributes="Bold"  HorizontalOptions="Center"/>
+            <syncfusion:SfListView  x:Name="InstrumentsListView" 
+                   ItemSize="100"
+                   Orientation="Horizontal"
+                   ItemHolding="OnItemSelected"
+                   
+                                   >
+
+                <syncfusion:SfListView.ItemTemplate >
+                    <DataTemplate >
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Instrument_name}"
+                       LineBreakMode="NoWrap"
+                       FontAttributes="Bold" 
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="16"/>
+                        
+                        </StackLayout>
+
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+
+            <Button Text="Add Instrument" Clicked="onaddinstrument"/>
+            <BoxView 
+            HeightRequest="1" 
+            BackgroundColor="Black" 
+            HorizontalOptions="FillAndExpand" />
+            
+            
+            <Grid Grid.Column="0"  Padding="5,0,0,0" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Picker Grid.Column="0"
+                        x:Name="genrepicker_1"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"/>
+
+                <Button Clicked="onaddgenre" 
+                        Grid.Column="1" 
+                        Text="Add"
+                        />
+            </Grid>
+
+            <syncfusion:SfListView  x:Name="genrelistview" 
+                   ItemSize="100"
+                   Orientation="Horizontal" 
+                    ItemHolding="DeleteGenre">
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="21" />
+                       
+            
+                    </DataTemplate>
+                    
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+            <BoxView 
+            HeightRequest="1" 
+            BackgroundColor="Black" 
+            HorizontalOptions="FillAndExpand" />
+
+           
+            <Label Text="Use my current Location"/>
+            <Switch x:Name="use_location" IsToggled="True"/>
+
+            <Label Text="Age Range"/>
+            <forms:RangeSlider x:Name="RangeSlider" ShowTextAboveThumbs="True" MinimumValue="18" MaximumValue="100" LowerValue="18" UpperValue="100" StepValue="5" StepValueContinuously="False" VerticalOptions="Center" TextSize="15" />
+            <Button Text="Save info" Clicked="onupdate"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

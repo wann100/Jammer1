@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jammer_1.Views.About_userSettings"
+            >
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Label Text="Edit your information!" />
+            <Entry x:Name="influences" Placeholder="Influences"   />
+            <Entry x:Name="about_me" Placeholder="About Me"  />
+            <Entry x:Name="prefered_genre" Placeholder="Prefered Genre"   />
+            <Entry x:Name="video_link_1" Placeholder="My video Link" />
+            <Entry x:Name="sample_link_1" Placeholder="My Music Link" />
+            <Entry x:Name="sample_link_2" Placeholder="My Music Link" />
+            <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                <Button  Text="Update Info" Clicked="OnUpdateinfo"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                <Button Text="Cancel" Clicked="onCancel"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Update info and location" Clicked="update_location"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

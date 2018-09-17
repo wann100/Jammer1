@@ -1,0 +1,5 @@
+drawable-xhdpi/seek_thumb_disabled.png;drawable-xhdpi/seek_thumb_disabled.png
+drawable-xhdpi/seek_thumb_normal.png;drawable-xhdpi/seek_thumb_normal.png
+drawable-xhdpi/seek_thumb_pressed.png;drawable-xhdpi/seek_thumb_pressed.png
+Values/attrs.xml;values/attrs.xml
+Values/strings.xml;values/strings.xml

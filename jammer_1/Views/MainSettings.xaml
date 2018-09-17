@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jammer_1.Views.MainSettings"
+             Title="My Settings"
+             Icon="schedule.png">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Frame OutlineColor="Black">
+                    <Image x:Name="imageToUpload"  HorizontalOptions="CenterAndExpand" />
+                </Frame>
+                <ActivityIndicator x:Name="activityIndicator" />
+                <Button x:Name="uploadButton" Text="Upload A new profile pic" Clicked="OnUpload"   />
+
+                <Button  Text="My editable info" Clicked="onGoToAbout"  />
+                <Button  Text="My Instruments" Clicked="onGoToInstruments"  />
+                <Button  Text="Discover Settings" Clicked="onGoToMatchSettings"  />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
